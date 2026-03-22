@@ -5579,7 +5579,6 @@ file.
 foo.bla._@.Init.Data.List.Basic.2.1.Init.Lean.Expr._hyg.4
 ```
 
-The delimiter `_hyg` is used just to improve the `hasMacroScopes` performance.
 In practice, we further specify the context name down to be unique per declaration so that the
 numeric scopes are not influenced by the elaboration of preceding declarations. This helps both with
 ensuring declaration names are more stable so that `prefer_native` can find the correct native
