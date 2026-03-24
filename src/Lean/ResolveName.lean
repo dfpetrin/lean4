@@ -241,13 +241,13 @@ def resolveNamespaceUsingOpenDecls (env : Environment) (n : Name) : List OpenDec
 /--
 Given a name `id` try to find namespaces it may refer to. The resolution procedure works as follows
 
-1- If `id` is in the scope of `namespace` commands the namespace `s_1. ... . s_n`,
-   then we include `s_1 . ... . s_i ++ n` in the result if it is the name of an existing namespace.
-   We search "backwards", and include at most one of the in the list of resulting namespaces.
+1- If `id` is in the scope of nested `namespace` commands making up the namespace `s_1 . ... . s_n`,
+   then we include `s_1 . ... . s_i . id` in the result if it is the name of an existing namespace.
+   We search "backwards", and include at most one of the matches in the list of resulting namespaces.
 
-2- If `id` is the exact name of an existing namespace, then include `id`
+2- If `id` is the exact name of an existing namespace, then include `id`.
 
-3- Finally, for each command `open N`, include in the result `N ++ n` if it is the name of an existing namespace.
+3- Finally, for each command `open N`, include in the result `N . id` if it is the name of an existing namespace.
    We only consider simple `open` commands. -/
 def resolveNamespace (env : Environment) (ns : Name) (openDecls : List OpenDecl) (id : Name) : List Name :=
   match resolveNamespaceUsingScope? env id ns with
