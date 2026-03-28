@@ -5245,7 +5245,7 @@ partial def getHeadInfo? : Syntax → Option SourceInfo
   | node info _ _ => some info
   | _             => none
 
-/-- Retrieve the left-most leaf's info in the Syntax tree, or `none` if there is no token. -/
+/-- Retrieve the left-most node or leaf's info in the Syntax tree, or `none` if there is no token. -/
 partial def getHeadInfo (stx : Syntax) : SourceInfo :=
   match stx.getHeadInfo? with
   | some info => info
