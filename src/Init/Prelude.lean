@@ -525,8 +525,7 @@ Lean's type theory includes a [definitional reduction](lean-manual://section/typ
  * `Quot.mk` places elements of the underlying type `α` into the quotient.
  * `Quot.sound` asserts the equality of elements related by `r`
  * `Quot.ind` is used to write proofs about quotients by assuming that all elements are constructed
-   with `Quot.mk`; it is analogous to the [recursor](lean-manual://section/recursors) for a
-   structure.
+   with `Quot.mk`.
 -/
 add_decl_doc Quot.lift
 
