@@ -5379,7 +5379,7 @@ inductive ParserDescr where
   should apply. -/
   | trailingNode (kind : SyntaxNodeKind) (prec lhsPrec : Nat) (p : ParserDescr)
   /--
-  Parses the literal symbol.
+  Parses an atomic symbol.
 
   The symbol is automatically included in the set of reserved tokens ("keywords").
   Keywords cannot be used as identifiers, unless the identifier is otherwise escaped.
@@ -5392,7 +5392,7 @@ inductive ParserDescr where
   -/
   | symbol (val : String)
   /--
-  Parses a literal symbol. The `&` prefix prevents it from being included in the set of reserved tokens ("keywords").
+  Parses an atomic symbol. The `&` prefix prevents it from being included in the set of reserved tokens ("keywords").
   This means that the symbol can still be recognized as an identifier by other parsers.
 
   Some syntax categories, such as `tactic`, automatically apply `&` to the first symbol.
