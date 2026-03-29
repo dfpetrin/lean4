@@ -5450,8 +5450,8 @@ abbrev TrailingParserDescr := ParserDescr
 
 /-!
 Runtime support for making quotation terms auto-hygienic, by mangling identifiers
-introduced by them with a "macro scope" supplied by the context. Details to appear in a
-paper soon.
+introduced by them with a "macro scope" supplied by the context. Details available
+in the paper [Beyond Notations: Hygienic Macro Expansion for Theorem Proving Languages](https://arxiv.org/pdf/2001.10490).
 -/
 
 /--
