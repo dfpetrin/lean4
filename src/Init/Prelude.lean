@@ -5628,7 +5628,7 @@ A `MacroScopesView` represents a parsed hygienic name. `extractMacroScopes`
 will decode it from a `Name`, and `.review` will re-encode it. The grammar of a
 hygienic name is:
 ```
-<name>._@.(<module_name>.<scopes>)*.<mainModule>._hyg.<scopes>
+<name>._@.(<module_name>.<scopes>)*.<mainModule>.<uniq>._hygCtx._hyg.<scopes>
 ```
 -/
 structure MacroScopesView where
