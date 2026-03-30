@@ -936,7 +936,7 @@ instance [Inhabited α] : Inhabited (ULift α) where
 Lifts a type or proposition to a higher universe level.
 
 `PULift α` wraps a value of type `α`. It is a generalization of
-`PLift` that allows lifting values whose type may live in `Sort s`.
+`ULift` that allows lifting values whose type may live in `Sort s`.
 It also subsumes `PLift`.
 -/
 -- The universe variable `r` is written first so that `ULift.{r} α` can be used
